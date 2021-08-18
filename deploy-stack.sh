@@ -55,3 +55,5 @@ cdk deploy Applications --require-approval never
 
 aws eks update-kubeconfig --name PetSite --region $AWS_REGION
 kubectl get nodes                              
+
+aws ssm get-parameter --name '/petstore/petsiteurl'  | jq -r .Parameter.Value
