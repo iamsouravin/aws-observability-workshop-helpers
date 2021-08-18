@@ -1,10 +1,5 @@
 #!/bin/bash
 
-if [ -z "$1" ]; then
-    echo "No argument supplied. Please specify a value for CONSOLE_ROLE_ARN."
-    return 1
-fi
-
 function region_set_continue() {
     echo "AWS_REGION is ${AWS_REGION}"
 }
@@ -48,7 +43,6 @@ npm install
 # Bootstrap CDK
 cdk bootstrap
 
-CONSOLE_ROLE_ARN=$1
 EKS_ADMIN_ARN=$(../../getrole.sh)
 
 echo -e "\nRole \"${EKS_ADMIN_ARN}\" will be part of system:masters group\n"
