@@ -27,5 +27,5 @@ aws xray create-group \
 
 aws xray create-group \
   --group-name Housekeeping \
-  --filter-expression "http.url ENDSWITH \"/housekeepin€g/\" AND http.method = \"GET\" AND service(\"PetSite\")" \
+  --filter-expression "http.url ENDSWITH \"/housekeeping/\" AND http.method = \"GET\" AND service(\"PetSite\")" \
   --insights-configuration "InsightsEnabled=true,NotificationsEnabled=true"
